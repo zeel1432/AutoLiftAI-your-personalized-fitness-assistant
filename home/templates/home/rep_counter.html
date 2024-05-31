@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "home/rep_counter.css" %}">
+    <link rel="stylesheet" href="{% static "../app.css" %}">
+
+{% endblock %}
+
+{% block title %}Repitition Counter{% endblock %}
+
+
+{% block content %}
+    {% comment %} <div class="repcounter">
+        <h2> </h2>
+        <p>Introducing the RepCounter with Webcam: Your all-in-one fitness companion! Track reps accurately while streaming workouts with crystal-clear video. Stay connected, improve form, and reach your fitness goals effortlessly.</p>
+        <a href="#" class="btn custom-btn bg-color mt-3" data-toggle="modal"
+            onclick="Bmimain()">Start Counting</a>
+    </div> {% endcomment %}
+
+    <section class="heroforcouterpage d-flex flex-column justify-content-center align-items-center" id="home">
+    <div class="bg-overlayforcount"></div>
+
+    
+    <div class="container">
+             <div class="row">
+
+                <div class="col-lg-8 col-md-10 mx-auto col-12">
+                    <div class="hero-text mt-5 text-center">
+
+                        <h6 class="h6" data-aos="fade-up" data-aos-delay="300">New way to build a healthy lifestyle!</h6>
+
+                        <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Count your exersice repitation </h1>
+
+                        <a href="#feature" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">Get
+                            started</a>
+
+                        <a href="rep_counter" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">COUNT YOUR REPITITION</a>
+
+                        <a href="#about" id="start-button" class="btn custom-btn bordered mt-3" data-aos="fade-up"
+                            data-aos-delay="700" onclick="">Count Your Repetition</a>
+
+                    </div>
+                </div>
+
+            </div> 
+
+            {% comment %} <h1>Video Capture Portal</h1> {% endcomment %}
+            {% comment %} <button id="start-button">Start Video Capture</button> {% endcomment %}
+            {% comment %} <div id="video-feed"></div> {% endcomment %}
+            <script>
+                document.getElementById("start-button").addEventListener('click', function() {
+                    console.log("testing")
+                    fetch('/start-video-capture/')
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data.status);
+                        });
+                });
+            </script>
+    </div>
+    </section> 
+
+    {% block script %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,48 @@
+
+.repcounter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+/*---------------------------------------
+     HERO              
+  -----------------------------------------*/
+
+  .heroforcouterpage {
+    background-image: url('../home/images/human-pose-estimation-ai-fitness.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    min-height: 100vh;
+    position: relative;
+    
+  }
+
+  /* BG OVERLAY */
+
+.bg-overlayforcount {
+  background: var(--dark-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.40;
+}
+
+.h6{
+  font-weight: var(--font-weight-thin);
+  line-height: normal;
+  color: var(--about-bg-color);
+  font-size: var(--h6-font-size);
+  line-height: inherit;
+  margin: 0;
+}
+
+  

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "home/rep_counter.css" %}">
+    {% comment %} <link rel="stylesheet" href="{% static "../app.css" %}"> {% endcomment %}
+
+{% endblock %}
+
+{% block title %}Repitition Counter{% endblock %}
+
+
+{% block content %}
+    
+    <h1>Chat with GPT-3</h1>
+    <textarea id="prompt" rows="4" cols="50"></textarea><br>
+    <button onclick="sendPrompt()">Send</button>
+    <p id="response"></p>
+
+    <script>
+        async function sendPrompt() {
+            const prompt = document.getElementById('prompt').value;
+            const response = await fetch('/chat/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: new URLSearchParams({'prompt': prompt})
+            });
+            const data = await response.json();
+            document.getElementById('response').innerText = data.response;
+        }
+    </script>
+{% endblock %}
