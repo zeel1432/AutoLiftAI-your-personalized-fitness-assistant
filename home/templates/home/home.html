@@ -66,6 +66,7 @@
                 <div class="d-flex flex-column justify-content-center ml-lg-auto mr-lg-5 col-lg-5 col-md-6 col-12">
                     <h2 class="mb-3 text-white" data-aos="fade-up">New to the Autofit?</h2>
                     <h3 style="color: rgb(193, 193, 193);">We need to calculate your Body Mass Index[BMI] </h3>
+                    {% csrf_token %}
                     <form action="#" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400"
                         role="form">
                         <input type="text" id = "weight" class="form-control" name="cf-name" placeholder="Weight (in kgs)">
@@ -84,7 +85,7 @@
                                 var wgt = (document.getElementById("weight").value);
                                 var x = wgt / (hgt*hgt);
                                 console.log(hgt + " " + wgt + " " + x);
-document.getElementById('bmiOutput').innerHTML = ("Your BMI is:" + " " + x);
+                                document.getElementById('bmiOutput').innerHTML = ("Your BMI is:" + " " + x);
 
 
                             }
@@ -102,6 +103,7 @@ document.getElementById('bmiOutput').innerHTML = ("Your BMI is:" + " " + x);
 
                 <div class="mr-lg-auto mt-3 col-lg-4 col-md-6 col-12">
                     <div class="about-working-hours">
+                        {% comment %} {% csrf_token %} {% endcomment %}
                         <div>
 
                             <h2 class="mb-4 text-white" data-aos="fade-up" data-aos-delay="500">BMI CHART</h2>
